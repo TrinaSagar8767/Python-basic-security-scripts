@@ -1,0 +1,11 @@
+import nmap
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: ./port-scanner.py <target_ip>")
+    sys.exit(1)
+
+target = str(sys.argv[1])
+default_ports = [21,22,23,80,443,8080]
+
+
