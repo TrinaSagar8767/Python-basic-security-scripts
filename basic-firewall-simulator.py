@@ -1,5 +1,5 @@
 import random
-#small scale firewall simulator
+#small scale basic firewall simulator
 #generate random ip addresses, check if blocked
 
 def gen_ip():
