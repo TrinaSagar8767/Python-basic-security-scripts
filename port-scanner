@@ -1,11 +1,13 @@
 import nmap
-import sys
 
-if len(sys.argv) != 2:
-    print("Usage: ./port-scanner.py <target_ip>")
-    sys.exit(1)
-
-target = str(sys.argv[1])
+target = str(input("Enter target ip: "))
 default_ports = [21,22,23,80,443,8080]
+scanner = nmap.PortScanner()
 
+print("Scanning target: ", target, " on ports: ", default_ports)
 
+for p in default_ports:
+    pscan = scanner.scan(target, str(p))
+    print("Port", p, "is ", pscan['scan'][target]['tcp'][p]['state'])
+
+print("Host", target, " is ", pscan['scan'][target]['status']['state'])
